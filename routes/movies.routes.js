@@ -47,4 +47,19 @@ router.delete('/:id', async (req, res, next) => {
     res.sendStatus(204)
 })
 
+router.patch('/:id', async (req, res, next) => {
+    const newMovie = req.body
+    const movie = await Movie.findByIdAndUpdate(
+        req.params.id,
+        {
+            title: newMovie.title,
+            genre: newMovie.genre,
+            plot: newMovie.plot,
+        },
+        { new: true }
+    )
+    res.json({ movie })
+    res.sendStatus(200)
+})
+
 module.exports = router
