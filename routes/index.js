@@ -11,6 +11,6 @@ router.get('/', (req, res, next) =>
 )
 
 router.use('/celebrities', celebritiesRouter)
-router.use('/movies', moviesRouter)
+router.use('/movie', moviesRouter)
 
 module.exports = router
