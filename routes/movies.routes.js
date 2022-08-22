@@ -42,4 +42,9 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
+router.delete('/:id', async (req, res, next) => {
+    await Movie.findByIdAndDelete(req.params.id)
+    res.sendStatus(204)
+})
+
 module.exports = router
