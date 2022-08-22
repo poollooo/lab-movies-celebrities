@@ -20,4 +20,13 @@ router.post('/', async (req, res, next) => {
     }
 })
 
+router.get('/', async (req, res, next) => {
+    try {
+        const celebrities = await Celebrity.find()
+        res.status(200).json({ celebrities })
+    } catch (error) {
+        next(error)
+    }
+})
+
 module.exports = router
