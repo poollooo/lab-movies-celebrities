@@ -23,13 +23,13 @@ router.post('/actor/:castId', async (req, res, next) => {
     }
 })
 
-// router.get('/', async (req, res, next) => {
-//     try {
-//         const celebrities = await Celebrity.find()
-//         res.status(200).json({ celebrities })
-//     } catch (error) {
-//         next(error)
-//     }
-// })
+router.get('/', async (req, res, next) => {
+    try {
+        const movies = await Movie.find()
+        res.status(200).json({ movies })
+    } catch (error) {
+        next(error)
+    }
+})
 
 module.exports = router
