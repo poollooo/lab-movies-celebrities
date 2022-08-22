@@ -5,9 +5,6 @@ const Movie = require('../models/Movie.model')
 router.post('/actor/:castId', async (req, res, next) => {
     try {
         const { castId } = req.params
-        // if (!mongoose.isValidObjectId(castId)) {
-        //     return res.status(400).json({ message: `Please provide a valid actor Id` })
-        // }
         const newMovie = req.body
         const createdMovie = await Movie.create({
             title: newMovie.title,
